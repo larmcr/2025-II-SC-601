@@ -2,7 +2,7 @@
 
 | Curso                           | Programación Avanzada               |
 | :------------------------------ | :---------------------------------- |
-| Código                          | SC-701                              |
+| Código                          | SC-601                              |
 | Profesor                        | Luis Andrés Rojas Matey             |
 | Fecha y hora de entrega inicial | Miércoles 18 de junio a las 9:00 pm |
 | Fecha y hora de entrega final   | Miércoles 25 de junio a las 6:00 pm |
