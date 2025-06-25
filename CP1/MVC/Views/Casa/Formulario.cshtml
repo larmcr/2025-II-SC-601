@@ -1,0 +1,46 @@
+﻿@model MVC.Models.ClienteModel
+
+@{
+    ViewBag.Title = "Formulario";
+}
+
+<div class="grid">
+    <article>
+        <header><b>Ingrese los datos del cliente</b></header>
+        <form method="post" asp-controller="Casa" asp-action="Formulario">
+            <fieldset>
+                <label>
+                    Cédula: @Html.EditorFor(model => model.Cedula)
+                </label>
+                <label>
+                    Edad: @Html.EditorFor(model => model.Edad)
+                </label>
+                <label>
+                    Nombre: @Html.EditorFor(model => model.Nombre)
+                </label>
+                <label>
+                    Correo: @Html.EditorFor(model => model.Correo)
+                </label>
+            </fieldset>
+            <input type="submit" value="Agregar" />
+        </form>
+    </article>
+    <article>
+        <header><b>Resultado</b></header>
+        @if (Model != null)
+        {
+            if (Model.EsValido)
+            {
+                <mark>Los datos del formulario son válidos</mark>
+            }
+            else
+            {
+                <mark>El Formulario contiene errores</mark>
+                <br />
+                <p>
+                    @Html.ValidationSummary(false, "Error(es):")
+                </p>
+            }
+        }
+    </article>
+</div>

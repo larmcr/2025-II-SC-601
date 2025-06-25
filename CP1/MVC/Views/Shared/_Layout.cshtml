@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark">
+    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title - MVC</title>
+</head>
+<body>
+    <main class="container">
+        <nav>
+            <ul>
+                <li>@Html.ActionLink("Inicio", "Inicio", "Casa", new { aspRoute: "#" })</li>
+                <li>@Html.ActionLink("Formulario", "Formulario", "Casa")</li>
+            </ul>
+        </nav>
+        <div>
+            @RenderBody()
+        </div>
+    </main>
+</body>
+</html>
