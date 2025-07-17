@@ -1,0 +1,17 @@
+﻿@{
+    var errorModel = (HandleErrorInfo)ViewData.Model;
+}
+
+<h2>CustomErrorView</h2>
+<p>
+    <b>Controller</b>: @errorModel.ControllerName
+</p>
+<p>
+    <b>Action</b>: @errorModel.ActionName
+</p>
+<p>
+    <b>Message</b>: @errorModel.Exception.Message
+</p>
+<p>
+    <b>Stack Trace</b>: @errorModel.Exception.StackTrace
+</p>
