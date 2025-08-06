@@ -1,0 +1,33 @@
+﻿<p>
+    <input id="name" type="text" placeholder="Name" />
+    <br />
+    <b>Name</b>: <span id="show"></span>
+</p>
+
+<p>
+    <b>Items:</b>
+    <ul>
+        @foreach (var item in @Model)
+        {
+            <li><b>@item.Key</b>: @item.Value</li>
+        }
+    </ul>
+</p>
+
+<script>
+    let index = 0;
+    const showName = () => {
+        const name = $('#name');
+        const show = $('#show');
+        const value = name.val();
+        const length = value.length;
+        if (length > 0 && index < length) {
+            show.text(value.slice(0, index + 1));
+            index++
+        } else {
+            show.text("");
+            index = 0;
+        }
+    }
+    window.setInterval(showName, 250);
+</script>

@@ -1,0 +1,36 @@
+﻿<p>
+    <button id="btn-dates-and-times">Dates & Times</button>
+    <ul id="dates-and-times"></ul>
+</p>
+<br />
+<p>
+    <b>Randoms</b>:
+    <input id="btn-randoms" type="number" value="0" min="0" />
+    <ul id="randoms"></ul>
+</p>
+
+<script>
+    $(document).ready(() => {
+        $("#btn-dates-and-times").on("click", () => {
+            $.ajax("/api/values", {
+                httpMethod: "GET",
+                success: (data) => {
+                    const datesAndTimes = $("#dates-and-times");
+                    datesAndTimes.empty();
+                    data.forEach((item) => datesAndTimes.append(`<li><b>${item.Key}</b>: ${item.Value}</li>`));
+                }
+            });
+        });
+        $("#btn-randoms").on("click", ({ target }) => {
+            $.ajax(`/api/values/${target.value}`, {
+                httpMethod: "GET",
+                success: (data) => {
+                    const randoms = $("#randoms");
+                    randoms.empty();
+                    data.forEach((item) => randoms.append(`<li>${item}</li>`));
+                }
+            });
+        });
+    });
+</script>
+
